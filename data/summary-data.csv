@@ -169,31 +169,6 @@ Rank,Gamer,Skill Rating,# Games
 
 
 4,540",34
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 35,"profit#31261
 4538","Top 1%
 
@@ -592,31 +567,6 @@ Rank,Gamer,Skill Rating,# Games
 3335","3,335",162
 134,"enjetek#1648
 3329","3,329",48
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 135,"Unoski#1826
 3328","3,328",39
 136,"NileyTheTown#1687
@@ -817,31 +767,6 @@ Rank,Gamer,Skill Rating,# Games
 3101","3,101",19
 233,"DVA#12497
 3101","3,101",117
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 235,"Honeydew#12520
 3098","3,098",79
 235,"Hk47#1533
@@ -1042,31 +967,6 @@ Rank,Gamer,Skill Rating,# Games
 2960","2,960",20
 333,"Dropshock#11353
 2960","2,960",169
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 335,"Autopsy#11911
 2956","2,956",60
 336,"Grimdaddy#11525
@@ -1267,31 +1167,6 @@ Rank,Gamer,Skill Rating,# Games
 2833","2,833",69
 434,"SLGBaron#1525
 2828","2,828",260
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 434,"Shaggy#1900
 2828","2,828",48
 436,"TheAccident#11604
@@ -1492,31 +1367,6 @@ Rank,Gamer,Skill Rating,# Games
 2700","2,700",22
 531,"aapprentice#1819
 2700","2,700",146
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 531,"MeatWagon#11166
 2700","2,700",95
 536,"Idioteque#11607
@@ -1717,31 +1567,6 @@ Rank,Gamer,Skill Rating,# Games
 2608","2,608",111
 633,"DarkJesture#1326
 2608","2,608",20
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 633,"LandFish#11824
 2608","2,608",67
 633,"Kyrain#11605
@@ -1942,31 +1767,6 @@ Rank,Gamer,Skill Rating,# Games
 2525","2,525",49
 734,"Converge#11166
 2524","2,524",58
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 735,"SlothMaker#1711
 2523","2,523",49
 736,"AXEL#13186
@@ -2167,31 +1967,6 @@ Rank,Gamer,Skill Rating,# Games
 2460","2,460",35
 834,"jakeup#11919
 2458","2,458",26
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 834,"mello3452#1741
 2458","2,458",104
 836,"NCJACK#1361
@@ -2392,31 +2167,6 @@ Rank,Gamer,Skill Rating,# Games
 2379","2,379",37
 934,"Fweddy1UP#1684
 2378","2,378",33
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 935,"EXEODUS#1702
 2377","2,377",83
 936,"Shade#13312
@@ -2617,31 +2367,6 @@ Rank,Gamer,Skill Rating,# Games
 2294","2,294",126
 1033,"Kinder#1190
 2294","2,294",139
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1035,"DiakenXu#1410
 2293","2,293",188
 1035,"CoolMClassy#1972
@@ -2842,31 +2567,6 @@ Rank,Gamer,Skill Rating,# Games
 2217","2,217",37
 1133,"tommy#14278
 2217","2,217",41
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1135,"jSON#11854
 2216","2,216",26
 1135,"EASmarteen#1834
@@ -3067,31 +2767,6 @@ Rank,Gamer,Skill Rating,# Games
 2123","2,123",71
 1234,"GingerDoctor#11478
 2122","2,122",104
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1234,"MoonManFlo#1769
 2122","2,122",25
 1236,"Nethal#11688
@@ -3292,31 +2967,6 @@ Rank,Gamer,Skill Rating,# Games
 2039","2,039",36
 1334,"dxhunter2033#1987
 2037","2,037",319
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1334,"SaintCoots#1113
 2037","2,037",341
 1336,"Blakeing#1824
@@ -3517,31 +3167,6 @@ Rank,Gamer,Skill Rating,# Games
 1922","1,922",18
 1434,"Notgoodgamer#11385
 1920","1,920",28
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1435,"AhegaoWeeb#1371
 1919","1,919",67
 1436,"Salenicus#1350
@@ -3742,31 +3367,6 @@ Rank,Gamer,Skill Rating,# Games
 1764","1,764",30
 1533,"Mikey813rd#1964
 1764","1,764",17
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1535,"Mavery#1522
 1760","1,760",31
 1535,"Blah#1547
@@ -3967,31 +3567,6 @@ Rank,Gamer,Skill Rating,# Games
 1567","1,567",83
 1634,"Naria#1411
 1565","1,565",47
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1634,"GoldenGamer#11496
 1565","1,565",203
 1636,"Zamorgon#11344
@@ -4192,31 +3767,6 @@ Rank,Gamer,Skill Rating,# Games
 1158","1,158",123
 1734,"vanithe#1588
 1155","1,155",79
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1735,"billylectro#1341
 1154","1,154",34
 1736,"EliteForce#11307
@@ -4360,31 +3910,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Coldblackice#1913,,193
 1778,Nodari#1278,,40
 1778,Payne#1988,,2
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,MoistTKB#1987,,241
 1778,tycoge#1285,,64
 1778,JackAttack#11803,,114
@@ -4485,31 +4010,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,LavNasty#1392,,45
 1778,Techno#1822,,75
 1778,HansBonanz#1287,,31
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,CyborgJenn#1192,,2
 1778,Hydran#11747,,24
 1778,Volnok#1773,,107
@@ -4610,31 +4110,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Zenigma#1507,,224
 1778,Antheya#1864,,82
 1778,ChaoticSpud#1370,,24
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Vision#11723,,60
 1778,McAmesnia#1745,,17
 1778,gutsack#11864,,478
@@ -4735,31 +4210,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Kobrasans999#1830,,35
 1778,giigii#1615,,50
 1778,SherlockOhms#11187,,66
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,GORILLAZ#11100,,136
 1778,Echomaker#11436,,147
 1778,Theeparadox#11227,,2
@@ -4860,31 +4310,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Tearraven#1980,,30
 1778,Boss#17622,,52
 1778,JSVANTAGE#1648,,463
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Kurtypop#11527,,312
 1778,DeadZone#1629,,1
 1778,ericio22#1850,,123
@@ -4985,31 +4410,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,MangoJuulPod#1609,,49
 1778,Grizzly#2944,,28
 1778,Sammann#1272,,21
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Rage#13876,,20
 1778,NUTCRACK3R2#1664,,81
 1778,SoftRock#11661,,98
@@ -5110,31 +4510,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Trogdor#12856,,51
 1778,Alex#116449,,144
 1778,Keedralion#1885,,35
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Wolfdog358#1453,,557
 1778,Homeslice#1233,,27
 1778,Quinberly#1186,,35
@@ -5235,31 +4610,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Nanaki#1282,,218
 1778,Dayman#12539,,38
 1778,WubbleFamily#1670,,118
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Pengulon#11891,,26
 1778,Xellis#1604,,18
 1778,Cosmo5550#1549,,231
@@ -5360,31 +4710,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,DaringPort#1258,,33
 1778,Chrizzy#11850,,2
 1778,BlinkingZero#1663,,32
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,MiKroTeeK#1470,,394
 1778,Ash#14450,,27
 1778,LegitGamer25#1636,,24
@@ -5485,31 +4810,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,RubyOnRails#11229,,84
 1778,BerserkZz#1799,,34
 1778,BearisonFord#1405,,22
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,fragmate#11902,,21
 1778,bkfliplee#1895,,48
 1778,IVI#11444,,43
@@ -5610,31 +4910,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,WeirdB1NarY#1867,,35
 1778,Chandra#11310,,47
 1778,AmericanBear#11245,,58
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,NinjaTurtle#21551,,57
 1778,FROZEN#12979,,79
 1778,Tom#16324,,87
@@ -5735,31 +5010,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Guava#1331,,50
 1778,Nathan#14674,,343
 1778,sp0rt5#1433,,74
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Mitobu#1385,,2
 1778,fueledbyobs#1781,,18
 1778,ghosthunter9#1886,,47
@@ -5860,31 +5110,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,KPxSeoulJa#1793,,68
 1778,L8Nick#1353,,21
 1778,MoTiioN#11397,,38
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Hazmatt117#1771,,108
 1778,Toshikz#1759,,106
 1778,CraFTy#11889,,3
@@ -5985,31 +5210,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,AngelicDemon#11936,,94
 1778,RobotWizard#115962,,21
 1778,GrannyGravy#1495,,31
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Aerospatiale#1545,,27
 1778,Patar#11348,,135
 1778,Joeyb908#1969,,54
@@ -6110,31 +5310,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,birblover101#1164,,2
 1778,Akichann#1128,,33
 1778,Dgamer129#1249,,35
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,MopsyDoo#1589,,3
 1778,Aaron1011#1417,,67
 1778,Socks#11592,,174
@@ -6235,31 +5410,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Dylzilla777#1578,,40
 1778,indy#1823,,50
 1778,Nanaki#1282,,218
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Dozer#11549,,91
 1778,The7thPlanet#11954,,125
 1778,GypsyPup#1176,,13
@@ -6360,31 +5510,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,ThaRod444#1499,,65
 1778,Dremek#1104,,40
 1778,llHaZarDll#1411,,189
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,ctharvey#1203,,142
 1778,JellaFella#1937,,54
 1778,Mangos#1697,,20
@@ -6485,31 +5610,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Mysteryprof#1213,,22
 1778,LEGENDofALDO#1115,,117
 1778,FrostCrackle#1100,,39
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,xDefyx#1397,,1
 1778,Scylo#11522,,47
 1778,Rante#11622,,161
@@ -6610,31 +5710,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Shoplift#1742,,31
 1778,RikkiRich#1335,,48
 1778,AkumaMoloch#1292,,39
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Adeus#11458,,22
 1778,CreamShi#1615,,120
 1778,styx#11984,,84
@@ -6735,31 +5810,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Lil#12817,,37
 1778,GroupUpPls#1948,,51
 1778,Smartwater#1695,,240
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Derezzer#1796,,199
 1778,Brohamen#1818,,82
 1778,ShabaTheHut#1668,,153
@@ -6860,31 +5910,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Sabrehawk#11699,,37
 1778,ObeyTheFist#11957,,76
 1778,Baelitz#1548,,169
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,PriceUp#11925,,61
 1778,zhuris#1787,,93
 1778,SaphireEmber#1100,,41
@@ -6985,31 +6010,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,twincannon#1914,,221
 1778,IMadeAMistak#11181,,24
 1778,SilentMrDave#1857,,79
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,DashEWz#1173,,52
 1778,DarkWafflez#1448,,65
 1778,Mythic#11261,,18
@@ -7110,31 +6110,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,ObeyTheFist#11957,,76
 1778,Pande#11481,,32
 1778,Adeus#11458,,22
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Lee#13900,,80
 1778,Sabrehawk#11699,,37
 1778,Kiwak#11822,,87
@@ -7235,31 +6210,6 @@ Rank,Gamer,Skill Rating,# Games
 1778,Hydra#12315,,128
 1778,DankVader#11210,,47
 1778,Adeus#11458,,22
-"if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});","if (window.device == 'mobile') {
-            document.write('<div class=""ad-tag"" data-ad-name=""Footer Mobile: 300x250"" data-ad-size=""300x250""></div>');
-        }
-        else {
-            document.write('<div class=""ad-tag"" data-ad-name=""Header Desktop: 728x90"" data-ad-size=""728x90"" data-ad-refresh=""time 240s""></div>');
-        }
-        (deployads = window.deployads || []).push({});"
 1778,Gooman15#11722,,66
 1778,Slay#12189,,30
 1778,Spite#11292,,54

@@ -47,8 +47,8 @@ for (page in seq(2,1000)){
 # for each gamer in df above, convert their name to insert into URL call
 length(data)
 summary_df <- do.call(rbind, data)
-summary_df %>% dim
-write_csv(summary_df, 'data/summary-data.csv')
+summary_df %>% filter(grepl('if \\(window', Rank)) %>% dim
+write_csv(summary_df %>% filter(!grepl('if \\(window', Rank)), 'data/summary-data.csv')
 
 
 # WIP below ---------------------------------------------------------------
