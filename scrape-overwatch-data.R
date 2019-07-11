@@ -2,21 +2,22 @@
 library(rvest)
 library(jsonlite)
 library(stringr)
+library(tidyverse)
 
 # ow <- read_html('https://overwatchtracker.com/profile/pc/global/Doge-21561')
 # ow %>% html_node('.infobox') %>% str_subset(., 'viewers')
-# 
-# 
+#
+#
 # ow2 <- read_html('https://ovrstat.com/stats/pc/us/Viz-1213')
 # json_ow <- fromJSON('https://ovrstat.com/stats/pc/us/Viz-1213')
 # json_ow$name
-# 
+#
 # ow3 <- read_html('https://overwatchtracker.com/leaderboards/pc/global/CompetitiveRank?mode=1')
-# tmp <- ow3 %>% html_node('.content-container') %>% html_nodes('table') %>% 
+# tmp <- ow3 %>% html_node('.content-container') %>% html_nodes('table') %>%
 #   html_table(fill=TRUE)
-# 
-# url_tmp = 'https://overwatchtracker.com/leaderboards/pc/global/CompetitiveRank?country=United%%20States&page=%i&mode=1'
-# 
+#
+# https://overwatchtracker.com/leaderboards/psn/global/CompetitiveRank?page=2&mode=1
+#
 
 # for (page in seq(2,10)){
 #   print(sprintf(url_tmp, page))
@@ -24,23 +25,26 @@ library(stringr)
 
 data <- list()
 
-first_response <- read_html('https://overwatchtracker.com/leaderboards/pc/global/CompetitiveRank?mode=1') %>% 
+first_response <- read_html('https://overwatchtracker.com/leaderboards/psn/global/CompetitiveRank?mode=1') %>%
   html_node('.content-container') %>%
-  html_nodes('table') %>% 
+  html_nodes('table') %>%
   html_table(fill=TRUE)
 
+first_response[[1]]$page_number <- 1
 data[[1]] <- first_response[[1]]
 
-for (page in seq(2,1000)){
-  response <- read_html(sprintf(url_tmp, page)) %>% 
+tracker_url_tmp = 'https://overwatchtracker.com/leaderboards/psn/global/CompetitiveRank?page=%i&mode=1'
+
+for (page in seq(2,20)){
+  response <- read_html(sprintf(tracker_url_tmp, page)) %>%
     html_node('.content-container') %>%
-    html_nodes('table') %>% 
+    html_nodes('table') %>%
     html_table(fill=TRUE)
   
   if (is.list(response) & length(response) == 0){
     break
   }
-  
+  response[[1]]$page_number <- page
   data[[page]] <- response[[1]]
 }
 
@@ -50,49 +54,90 @@ summary_df <- do.call(rbind, data)
 summary_df %>% filter(grepl('if \\(window', Rank)) %>% dim
 write_csv(summary_df %>% filter(!grepl('if \\(window', Rank)), 'data/summary-data.csv')
 
-
-# WIP below ---------------------------------------------------------------
-
-tmp = read_csv('data/summary-data.csv')
-
-tmp %>% head()
-tmp3 %>% dim
-tmp3 %>% head(20)
-
-tmp[[1]]$Gamer
-tmp[[1]]$`Skill Rating`
-tmp[[1]]$`# Games`
-head(tmp[[1]]) # this is a starting dataframe
-
-# use that url call to try and get json
-json_ow <- fromJSON('https://ovrstat.com/stats/pc/us/Viz-1213')
-
-# then parase that json in a wide dataframe
-
-# join back to first dataframe on Gamer == Name, make sure theyre' in same format first
+summary_df %>%
+  filter(!grepl('if \\(window', Rank)) %>%
+  mutate(newlines = str_count(Gamer, '\n'),
+         Rank = as.numeric(Rank),
+         newlines_sr = str_extract(`Skill Rating`, '\d,\d{3}')) %>%
+  filter(newlines == 1) %>%
+  dim()
 
 
+# clean and mutate
+cleaned_summary <- summary_df %>%
+  filter(!grepl('if \\(window', Rank)) %>%
+  mutate(newlines = str_count(Gamer, '\n'),
+         rank = parse_number(Rank),
+         gamer_name = word(Gamer, 1, sep = fixed('\n')),
+         skill_rating = str_extract(`Skill Rating`, '\\d,\\d{3}') %>%
+           gsub(',','' ,.) %>% as.numeric(),
+         games_played = parse_number(`# Games`)
+  ) %>%
+  select(rank, gamer_name, skill_rating, games_played) %>% 
+  distinct()
 
-# lst = c()
-# length(lst)
-# lst = append(lst, tmp[[1]]$Gamer)
-# length(lst)
-# lst = append(lst, tmp[[1]]$Gamer)
-# length(lst)
-# lst
+write_csv(cleaned_summary, 'data/clean-summary-data.csv')
 
-# make structured data out of json
-str(json_ow)
-library(tidyverse)
-glimpse(json_ow, max.level = 3, list.len = 4)
+# look up on ovrstat.com
+ovrstat_url_tmp <- 'https://ovrstat.com/stats/psn/%s'
+ovrstat_data = list()
+num_gamers = length(cleaned_summary$gamer_name)
 
-tmp2 <- enframe(unlist(json_ow))
+# Start the clock!
+ptm <- proc.time()
 
-tmp2 %>% head(20)
-tmp2 %>% 
-  filter(grepl('competitiveStats', name)) %>% 
-  dim
+for (i in 1:num_gamers){
+  tryCatch({
+    gamer = cleaned_summary$gamer_name[i]
+    # print(sprintf(ovrstat_url_tmp, gamer))
+    json_response <- fromJSON(sprintf(ovrstat_url_tmp, gamer))
+    if (json_response$private) stop('profile is private')
+    table_response <- enframe(unlist(json_response))
+    df <- table_response %>%
+      filter(!grepl('quickPlayStats', name)) %>%
+      spread(name, value)
+    
+    ovrstat_data[[i]] <- df
+  }, error=function(e){cat("ERROR :",conditionMessage(e), "\n")})
+}
 
-glimpse(tmp2)
-tmp_wide = spread(tmp2, name, value)
-type.convert(tmp_wide) %>% glimpse()
+# Stop the clock
+proc.time() - ptm
+
+ow_df <- bind_rows(ovrstat_data) %>% distinct()
+ow_df %>% dim()
+
+write_csv(ow_df, 'data/ow-data.csv')
+
+
+ow_df %>% select(ga) %>% head()
+ow_df %>% select(name) %>% head()
+
+mean(cleaned_summary$gamer_name %in% (ow_df$name %>% trimws()))
+
+
+'%!in%' <- function(x,y)!('%in%'(x,y))
+cleaned_summary$gamer_name[cleaned_summary$gamer_name %!in% (ow_df$name %>% trimws())]
+
+unique(ow_df$name) %>% length
+
+ow_df %>% 
+  distinct() %>% 
+  group_by(name) %>% 
+  summarise(n=n()) %>% 
+  filter(n>1)
+
+ow_df %>% select(-starts_with('competitive')) %>% filter(name=='KKalon') %>% 
+  distinct()
+
+
+total_df <- ow_df %>%
+  inner_join(cleaned_summary, by=c('name'='gamer_name'))
+
+write_csv(total_df, 'data/total-data.csv')
+
+total_df <- total_df %>% type.convert()
+
+total_df %>% head()
+
+plot(total_df$skill_rating, log(total_df$competitiveStats.careerStats.allHeroes.assists.healingDone))
