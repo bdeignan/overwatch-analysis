@@ -73,7 +73,8 @@ cleaned_summary <- summary_df %>%
            gsub(',','' ,.) %>% as.numeric(),
          games_played = parse_number(`# Games`)
   ) %>%
-  select(rank, gamer_name, skill_rating, games_played)
+  select(rank, gamer_name, skill_rating, games_played) %>% 
+  distinct()
 
 write_csv(cleaned_summary, 'data/clean-summary-data.csv')
 
@@ -103,64 +104,40 @@ for (i in 1:num_gamers){
 # Stop the clock
 proc.time() - ptm
 
-ow_df <- bind_rows(ovrstat_data)
+ow_df <- bind_rows(ovrstat_data) %>% distinct()
 ow_df %>% dim()
 
 write_csv(ow_df, 'data/ow-data.csv')
 
 
-# WIP below ---------------------------------------------------------------
+ow_df %>% select(ga) %>% head()
+ow_df %>% select(name) %>% head()
+
+mean(cleaned_summary$gamer_name %in% (ow_df$name %>% trimws()))
 
 
-# sample parse json response
-json_response <- rjson::fromJSON(file=sprintf(ovrstat_url_tmp, 'atanupamz'))
-json_response$private
-table_response <- enframe(unlist(json_response))
-df <- table_response %>%
-  filter(!grepl('quickPlayStats', name)) %>%
-  spread(name, value)
+'%!in%' <- function(x,y)!('%in%'(x,y))
+cleaned_summary$gamer_name[cleaned_summary$gamer_name %!in% (ow_df$name %>% trimws())]
+
+unique(ow_df$name) %>% length
+
+ow_df %>% 
+  distinct() %>% 
+  group_by(name) %>% 
+  summarise(n=n()) %>% 
+  filter(n>1)
+
+ow_df %>% select(-starts_with('competitive')) %>% filter(name=='KKalon') %>% 
+  distinct()
 
 
-tmp = read_csv('data/summary-data.csv')
+total_df <- ow_df %>%
+  inner_join(cleaned_summary, by=c('name'='gamer_name'))
 
-tmp %>% head()
-tmp3 %>% dim
-tmp3 %>% head(20)
+write_csv(total_df, 'data/total-data.csv')
 
-tmp[[1]]$Gamer
-tmp[[1]]$`Skill Rating`
-tmp[[1]]$`# Games`
-head(tmp[[1]]) # this is a starting dataframe
+total_df <- total_df %>% type.convert()
 
-# use that url call to try and get json
-json_ow <- fromJSON('https://ovrstat.com/stats/pc/us/Viz-1213')
+total_df %>% head()
 
-# then parase that json in a wide dataframe
-
-# join back to first dataframe on Gamer == Name, make sure theyre' in same format first
-
-
-
-# lst = c()
-# length(lst)
-# lst = append(lst, tmp[[1]]$Gamer)
-# length(lst)
-# lst = append(lst, tmp[[1]]$Gamer)
-# length(lst)
-# lst
-
-# make structured data out of json
-str(json_ow)
-library(tidyverse)
-glimpse(json_ow, max.level = 3, list.len = 4)
-
-tmp2 <- enframe(unlist(json_ow))
-
-tmp2 %>% head(20)
-tmp2 %>% 
-  filter(grepl('competitiveStats', name)) %>% 
-  dim
-
-glimpse(tmp2)
-tmp_wide = spread(tmp2, name, value)
-type.convert(tmp_wide) %>% glimpse()
+plot(total_df$skill_rating, log(total_df$competitiveStats.careerStats.allHeroes.assists.healingDone))
