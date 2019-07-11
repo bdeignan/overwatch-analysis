@@ -103,11 +103,14 @@ for (i in 1:num_gamers){
 # Stop the clock
 proc.time() - ptm
 
+ow_df <- bind_rows(ovrstat_data)
+ow_df %>% dim()
+
+write_csv(ow_df, 'data/ow-data.csv')
 
 
-do.call(rbind, ovrstat_data)
+# WIP below ---------------------------------------------------------------
 
-bind_rows(ovrstat_data) %>% select(10:18) %>% head()
 
 # sample parse json response
 json_response <- rjson::fromJSON(file=sprintf(ovrstat_url_tmp, 'atanupamz'))
@@ -117,8 +120,6 @@ df <- table_response %>%
   filter(!grepl('quickPlayStats', name)) %>%
   spread(name, value)
 
-
-# WIP below ---------------------------------------------------------------
 
 tmp = read_csv('data/summary-data.csv')
 
