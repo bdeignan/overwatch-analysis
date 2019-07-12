@@ -4,25 +4,6 @@ library(jsonlite)
 library(stringr)
 library(tidyverse)
 
-# ow <- read_html('https://overwatchtracker.com/profile/pc/global/Doge-21561')
-# ow %>% html_node('.infobox') %>% str_subset(., 'viewers')
-#
-#
-# ow2 <- read_html('https://ovrstat.com/stats/pc/us/Viz-1213')
-# json_ow <- fromJSON('https://ovrstat.com/stats/pc/us/Viz-1213')
-# json_ow$name
-#
-# ow3 <- read_html('https://overwatchtracker.com/leaderboards/pc/global/CompetitiveRank?mode=1')
-# tmp <- ow3 %>% html_node('.content-container') %>% html_nodes('table') %>%
-#   html_table(fill=TRUE)
-#
-# https://overwatchtracker.com/leaderboards/psn/global/CompetitiveRank?page=2&mode=1
-#
-
-# for (page in seq(2,10)){
-#   print(sprintf(url_tmp, page))
-# }
-
 data <- list()
 
 first_response <- read_html('https://overwatchtracker.com/leaderboards/psn/global/CompetitiveRank?mode=1') %>%
