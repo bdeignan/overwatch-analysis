@@ -1,0 +1,59 @@
+---
+title: "Data Analysis Project - Predicting Overwatch Skill Rating"
+author: "Brian Deignan (deignan3) & Kai Chang (kaihc2)"
+date: 'July 15, 2019'
+output:
+  html_document: 
+    toc: yes
+    fig_width: 10
+  pdf_document: default
+urlcolor: cyan
+---
+
+***
+
+## Predicting Overwatch Skill Rating
+
+### Description of the dataset 
+Our dataset consists of information on gamers who play the video game Overwatch on Playstation 4. [Overwatch](https://en.wikipedia.org/wiki/Overwatch_(video_game)) is a team-based multiplayer first-person shooter developed and published by Blizzard Entertainment. Overwatch assigns players into two teams of six, with each player selecting from a roster of 30 characters, known as "heroes", each with a unique style of play whose roles are divided into three general categories that fit their role. Players on a team work together to secure and defend control points on a map or escort a payload across the map in a limited amount of time. 
+
+Overwatch has a large community and E-Sports presence online. Players' skill in competitive games is calculated by a "secret" formula at Blizzard that leads to a "skill rating", or "SR" for short. SR ranges from 0 to 5,000, the higher the score the better the player.
+
+We scraped a snapshot of PS4 players' SR (it changes from game to game) whose profiles were public on overwatchtracker.com. We then scraped players' career statistics from the games that they've played from the open source API ovrstat.com which returns convenient JSON formatted data.
+
+Currently we have over a thousand player skill ratings and over a thousand predictor variables. However, our research question will allow us to tailor our question to a small subset of the predictors.
+
+
+Research/personal interest:
+One of the team members plays Overwatch, but overall we're interested in the question: if a player wants to improve their SR, what should they focus on? Should they try to eliminate more opponents? Heal their teammates? Or, play a certain character? Answers like these will be provided by a predictive model of SR using career player statistics as predictors. Once we answer how a player could most efficiently improve their SR, perhaps one of us team members can convince the other to start playing and climb the Overwatch leaderboard!
+
+## Loading the data
+Source citation:
+https://github.com/bdeignan/overwatch-analysis/blob/master/scrape-overwatch-data.R
+
+Evidence that data can be loaded into R:
+see `start_df` here: https://github.com/bdeignan/overwatch-analysis/blob/master/explore-total-data.R
+
+```{r message=FALSE}
+library(tidyverse)
+```
+
+
+```{r}
+df <- read.csv('data/total-data.csv')
+df %>% select(1:50) %>% glimpse()
+# df <- total_df %>% type.convert()
+
+start_cols <- df %>% 
+  select(c('skill_rating',
+           starts_with('competitiveStats.careerStats.allHeroes'))
+         ) %>% 
+  is.na() %>% 
+  colSums()
+
+start_df <- df %>% 
+  select(one_of(names(start_cols[start_cols == 0])))
+
+pairs(start_df[1:4])
+```
+
