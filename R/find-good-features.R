@@ -27,10 +27,22 @@ sr_cor = M[row.names(M) == 'skill_rating', !(colnames(M) %in% c('rank', 'skill_r
 sr_cor[which.max(sr_cor)]
 sr_cor[which.min(sr_cor)]
 
-fit = lm(scale(skill_rating) ~ . -rank -top_hero_type,
+fit = lm(skill_rating ~ . -rank -top_hero_type,
          data=df
          )
 summary(fit)
-?scale
 plot(fitted(fit), resid(fit))
 
+qqnorm(resid(fit))
+qqline(resid(fit), col = "dodgerblue", lwd = 2)
+
+
+fit2 = lm(skill_rating ~ top_hero_type + best.meleeFinalBlowsMostInGame +
+     average.objectiveTimeAvgPer10Min, data = df)
+
+summary(fit2)
+shapiro.test(resid(fit2))
+
+qqnorm(resid(fit2))
+qqline(resid(fit2), col = "dodgerblue", lwd = 2)
+plot(fitted(fit2), resid(fit2))
