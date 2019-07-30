@@ -68,8 +68,9 @@ damage_heroes = c("soldier76", "mccree", "junkrat", "widowmaker", "ashe", "basti
 support_heroes = c("lucio", "ana", "moira", "mercy", "brigitte", "baptiste", "zenyatta")
 
 clean_df_small$top_hero_type = NA
-clean_df_small[match(tank_heroes, clean_df_small$top_hero), ]$top_hero_type = 'tank'
-clean_df_small[match(damage_heroes, clean_df_small$top_hero), ]$top_hero_type = 'damage'
-clean_df_small[match(support_heroes, clean_df_small$top_hero), ]$top_hero_type = 'support'
+clean_df_small[clean_df_small$top_hero %in% tank_heroes, ]$top_hero_type = 'tank'
+clean_df_small[clean_df_small$top_hero %in% damage_heroes, ]$top_hero_type = 'damage'
+clean_df_small[clean_df_small$top_hero %in% support_heroes, ]$top_hero_type = 'support'
 
+colnames(clean_df_small) = gsub('competitiveStats\\.careerStats\\.allHeroes\\.', '', colnames(clean_df_small))
 write_csv(clean_df_small, 'data/clean-data.csv')
