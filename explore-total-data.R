@@ -1,9 +1,10 @@
 library(tidyverse)
 
-df <- read.csv('data/total-data.csv')
+df <- read.csv('data/total-data-2.csv')
 df %>% select(1:50) %>% glimpse()
 # df <- total_df %>% type.convert()
 
+# NEED TO FIX THIS, WE HAVE MISSING DATA
 start_cols <- df %>% 
   select(c('skill_rating',
            starts_with('competitiveStats.careerStats.allHeroes'))
