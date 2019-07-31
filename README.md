@@ -1,6 +1,6 @@
 # Stat 420 Data Analysis Project
 
-![alt text](ow6.jpg)
+![alt text](ow3.jpg)
 
 ## Explaining the Overwatch Skill Rating
 
