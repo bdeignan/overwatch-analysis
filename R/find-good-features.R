@@ -123,6 +123,7 @@ vif(fit4)
 
 form2 = formula(skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + average.allDamageDoneAvgPer10Min + 
                   average.objectiveKillsAvgPer10Min + games_played + top_hero:average.allDamageDoneAvgPer10Min)
+
 fit5 = lm(form2, data = df)
 summary(fit5)
 vif(fit5)
