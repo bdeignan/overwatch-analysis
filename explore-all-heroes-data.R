@@ -1,7 +1,6 @@
-
 library(readr)
-# Seems to load with the correct type for time columns
-all_heroes_data <- read_csv("data/all-heroes-data.csv")
+
+clean_df <- read_csv("data/clean-data.csv")
 
 fit = lm(skill_rating ~ . - rank, data = all_heroes_data)
 summary(fit)
