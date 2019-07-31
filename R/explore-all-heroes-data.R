@@ -79,11 +79,12 @@ pair_vars = c("best.meleeFinalBlowsMostInGame",
 "average.allDamageDoneAvgPer10Min",
 "average.objectiveKillsAvgPer10Min",
 "games_played",
-"game.gamesPlayed",
 "skill_rating")
+
+df_final = df %>% select(one_of(c(pair_vars, 'top_hero'))) %>% 
+  mutate(top_hero = relevel(top_hero %>% as.factor(), ref='reinhardt'))
 fit3 = lm(skill_rating ~ top_hero : . + ., 
           data = df %>% select(one_of(c(pair_vars, 'top_hero'))) %>% 
-            select(-game.gamesPlayed ) %>% 
             mutate(top_hero = relevel(top_hero %>% as.factor(), ref='reinhardt'))
 )
 summary(fit3)
@@ -92,4 +93,23 @@ back_aic = step(fit3, direction = "backward")
 
 fit4 = lm(skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + average.allDamageDoneAvgPer10Min + 
             average.objectiveKillsAvgPer10Min + games_played + top_hero:average.allDamageDoneAvgPer10Min, data = df)
+summary(fit4)
+
+cor(df$skill_rating, df$games_played)
+cor(df$skill_rating, df$game.gamesPlayed)
+
+
+n = length(resid(fit3))
+back_bic = step(fit3, direction = "backward", k = log(n))
+
+summary(back_bic)
+
+fit_full = lm(skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + average.allDamageDoneAvgPer10Min + 
+     average.objectiveKillsAvgPer10Min + games_played + top_hero:average.allDamageDoneAvgPer10Min, data = df)
+
+fit_null = lm(skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + average.allDamageDoneAvgPer10Min + 
+                average.objectiveKillsAvgPer10Min + games_played, data = df)
+
+anova(fit_null, fit_full)
+
 summary(fit4)
