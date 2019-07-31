@@ -44,17 +44,100 @@ Overall we're interested in the question: if a player wants to improve their SR,
 The answers we find could be used by amateurs and pro Overwatch gamers alike. We think of our analysis as the start of something like ["Moneyball"](https://en.wikipedia.org/wiki/Moneyball) for Overwatch.
 
 ### Methods
+```{r, echo=FALSE, message=FALSE}
+library(tidyverse)
+library(lmtest)
+```
+
+```{r, message=FALSE}
+df = read_csv('data/clean-data.csv')
+```
+
 - relevel top hero - brian
 
+```{r, echo=FALSE, message=FALSE}
+df = df %>% 
+  select(-c(game.gamesPlayed, game.timePlayed, rank)) %>% 
+  mutate(top_hero = relevel(top_hero %>% as.factor(), ref='reinhardt'))
+```
+
+
 - glimpse - kai
+```{r}
+df %>% glimpse()
+```
 
 - summary - kai
 
 - bar chart of top players - brian
 
+##### Most played heroes
+
+```{r, echo=FALSE, cache=TRUE}
+df %>% group_by(top_hero_type, top_hero) %>% summarise(n = n()) %>% 
+  ggplot(., aes(y=n, x=reorder(top_hero, n), fill=top_hero_type)) + 
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_minimal() +
+  labs(x='Hero', y='Number of players', title='Most popular heroes to play',
+       fill = 'Hero type') +
+  scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9"))
+```
+
+birefly mention hero types and what heros are: https://en.wikipedia.org/wiki/Characters_of_Overwatch#Characters
+
+```{r}
+# borrowed from week 8 HW
+diagnostics <- function(model,
+                        pcol = 'grey',
+                        lcol = 'dodgerblue',
+                        alpha = 0.05,
+                        plotit = TRUE,
+                        testit = TRUE
+                        ){
+  if (plotit){
+    par(mfrow=c(1,2))
+    # plot 1 - fitted vs resid
+    plot(fitted(model), resid(model), col = pcol, pch = 20,
+         xlab = "Fitted", ylab = "Residuals", main = "Residual versus fitted plot")
+    abline(h = 0, col = lcol, lwd = 2)
+    
+    # plot 2
+    qqnorm(resid(model), main = "Normal Q-Q Plot", col = pcol)
+    qqline(resid(model), col = lcol, lwd = 2)
+  }
+  
+  if (testit){
+    st <- shapiro.test(resid(model))
+    decision <- ifelse(st$p.value < 0.05, 'Reject', 'Fail to Reject')
+    return(list(p_val=st$p.value, decision=decision))
+  }
+}
+```
+
+
 - full additive model without redundant variables - brian
 
+```{r, cache=TRUE}
+df %>% summary
+fit_add_full = lm(skill_rating ~ . -top_hero_type, data = df)
+
+diagnostics(fit_add_full, testit = FALSE)
+```
+
 - fail shapiro test, show qq plot - brian
+
+```{r}
+fm_diag = diagnostics(fit_add_full, plotit = FALSE)
+ # TO DO WRITE OUT TEST RESUTS OF SHAPIRO WILK
+fm_bp = bptest(fit_add_full)
+ # TO DO WRITE OUT TEST RESUTS OF BP
+fm_bp
+```
+
+##### Full additive model problems
+
+There are two major problems in the full additive model: heteroskedasticity and non-normal residuals. We can try to find the correct model and apply transformations to the predictors. Or, what we'll do instead is think more carefully about the predictors and hand-pick a smaller model to start with based on exploratory data analysis and our knowledge of Overwatch.
 
 - pairs plots response ~ 5 predictors - kai
 
