@@ -1,5 +1,8 @@
 # Stat 420 Data Analysis Project
-## Predicting Overwatch Skill Rating
+
+![alt text](ow3.jpg)
+
+## Explaining the Overwatch Skill Rating
 
 Tentative plan:
 - Scrape data from overwatchtracker.com and augment with data from API ovrstat.com
