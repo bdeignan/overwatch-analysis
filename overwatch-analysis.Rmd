@@ -26,15 +26,65 @@ Currently we have over a thousand player skill ratings and over a thousand predi
 One of the team members plays Overwatch, but overall we're interested in the question: if a player wants to improve their SR, what should they focus on? Should they try to eliminate more opponents? Heal their teammates? Or, play a certain character? Answers like these will be provided by a predictive model of SR using career player statistics as predictors. Once we answer how a player could most efficiently improve their SR, perhaps one of us team members can convince the other to start playing and climb the Overwatch leaderboard!
 
 ### Methods
+- relevel top hero - brian
+
+- glimpse - kai
+
+- summary - kai
+
+- bar chart of top players - brian
+
+- full additive model without redundant variables - brian
+
+- fail shapiro test, show qq plot - brian
+
+- pairs plots response ~ 5 predictors - kai
+
+- correlation - brian
+
+- log(gp) - brian
+
+- step bic + aic - kai
+
+- show r^2 - kai
+
+- 2 anova tests - kai
+
+
+
+
+```{r}
+library(readr)
+
+clean_df <- read_csv("data/clean-data.csv")
+predictors = colnames(clean_df)[1:60]
+predictors = append(predictors, "games_played")
+```
+
+```{r}
+for (name in predictors) {
+  plot(as.formula(paste("skill_rating ~ ", paste(name))), data = clean_df)
+}
+```
+
+```{r}
+
+```
+
 
 
 
 ### Results
 
+- diagnostics of final model - brian
+
+- 2 anova tests - kai
 
 
 ### Discussion
 
+- coef plot - brian
+- coefficients interpretation - brian, kai
 
 
 ### Appendix
