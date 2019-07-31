@@ -63,11 +63,29 @@ df = df %>%
 
 
 - glimpse - kai
+
 ```{r}
 df %>% glimpse()
 ```
 
 - summary - kai
+
+```{r, echo=FALSE, cache=TRUE}
+mean_sr = mean(df$skill_rating)
+sd_sr = sd(df$skill_rating)
+
+hist(df$skill_rating,
+     prob = TRUE,
+     xlab   = "Skill Rating",
+     main   = "Histogram of Skill Rating (Playstation 4 players)",
+     breaks = 20,
+     col    = "#56B4E9",
+     border = "#999999")
+curve(dnorm(x, mean = mean_sr, sd = sd_sr), 
+      col = "#E69F00", add = TRUE, lwd = 3)
+```
+
+Above is a normalized (to sum to 1) histogram of the reponse we want to model `skill_rating`. It appears that `skill_rating` (blue bars) looks a lot like a normal distribution (the orange line). This is a good thing, as this makes it easier to adhere to the assumptions of linear regression model we will use to explain the variation in player skill.
 
 - bar chart of top players - brian
 
@@ -143,7 +161,45 @@ There are two major problems in the full additive model: heteroskedasticity and 
 
 - correlation - brian
 
+```{r}
+find_cor_sr <- function(data){
+  M <- cor(data %>% select_if(is.numeric))
+  M[row.names(M) == 'skill_rating', !(colnames(M) %in% c('rank', 'skill_rating'))]
+}
+
+linear_cors = find_cor_sr(df)
+sort(linear_cors, decreasing=TRUE) %>% head(5)
+sort(linear_cors, decreasing=FALSE) %>% head(5)
+
+cor(df$combat.meleeFinalBlows, df$best.meleeFinalBlowsMostInGame)
+
+cor(df$average.allDamageDoneAvgPer10Min, df$average.barrierDamageDoneAvgPer10Min)
+cor(df$average.allDamageDoneAvgPer10Min, df$best.offensiveAssistsMostInGame)
+```
+
+Explain `best.meleeFinalBlowsMostInGame` and why `combat.meleeFinalBlows` is redundant. wtih this.
+
+Explain `average.allDamageDoneAvgPer10Min` and why it's more interpretable than `average.barrierDamageDoneAvgPer10Min` which is a result of your overall damage done per 10 minutes.
+
+Explain `average.objectiveKillsAvgPer10Min` and why it's correlated with `average.objectiveTimeAvgPer10Min` but more actionable since it's more specific about what to do when a player is on the objective area.
+
+And that's it. Those are the most correlated linear variables with SR we have.
+
 - log(gp) - brian
+
+##### Number of games played as a predictor
+
+A player may need to get better to improve their "average" statistics laid out in the correlated variables above. But one thing *any* player can always do is play more. So we also want to consider the number of games played as a predictor of `skill_rating` as it's both actionable and an obvious variable to control for, i.e. are the most skilled just those who have played the most?
+
+```{r}
+cor(df$skill_rating, df$games_played)
+
+par(mfrow=c(1,2))
+plot(skill_rating ~ games_played, data = df)
+plot(skill_rating ~ log(games_played), data = df)
+```
+
+We can see that the natural log transform of `games_played` makes the positive relationship with `skill_rating` easier to see and brings in the long tail of players who have played many more games than the median player. This will help prevent heteroskedasticity with this predictor in the linear model.
 
 - step bic + aic - kai
 
