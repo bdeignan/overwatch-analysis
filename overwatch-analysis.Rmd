@@ -10,7 +10,7 @@ output:
 urlcolor: cyan
 ---
 
-![Overwatch heroes in action](ow6.jpg)
+![Overwatch heroes Lucio, Wrecking Ball and Soldier 76 in action](ow6.jpg)
 
 ***
 
@@ -21,11 +21,27 @@ Our dataset consists of information on competitive gamers who play the video gam
 
 Overwatch has a large community and E-Sports presence online. Players' skill in competitive games is calculated by a "secret" formula at Blizzard that leads to a "skill rating", or "SR" for short. SR ranges from 0 to 5,000, the higher the score the better the player.
 
+Among the community, SR is divided into categories depending on how high the rating is, ranging from Bronze to Grandmaster:
+
+- 500-1499 Bronze
+- 1500-1999 Silver
+- 2000-2499 Gold
+- 2500-2999 Platinum
+- 3000-3499 Diamond
+- 3500-3999 Master
+- 4000-5000 Grandmaster
+
+##### Data
+
 We scraped a snapshot of PS4 players' SR (it changes from game to game) whose profiles were public on overwatchtracker.com. We then scraped players' career statistics from the games that they've played from the open source API ovrstat.com which returns convenient JSON formatted data.
 
-Currently we have over a thousand player skill ratings and over a thousand predictor variables. However, our research question will allow us to tailor our question to a small subset of the predictors.
+Currently we have over two thousand player skill ratings and over two thousand predictor variables. However, our research question will allow us to tailor our question to a small subset of the predictors, around 60 or so.
 
-One of the team members plays Overwatch, but overall we're interested in the question: if a player wants to improve their SR, what should they focus on? Should they try to eliminate more opponents? Heal their teammates? Or, play a certain character? Answers like these will be provided by a predictive model of SR using career player statistics as predictors. Once we answer how a player could most efficiently improve their SR, perhaps one of us team members can convince the other to start playing and climb the Overwatch leaderboard!
+##### Research Question
+
+Overall we're interested in the question: if a player wants to improve their SR, what should they focus on? Should they try to eliminate more opponents? Heal their teammates? Or, play a certain character? Answers like these will be provided by a predictive model of SR using career player statistics as predictors. The answers we find will allow any player to most efficiently improve their SR and begin climbing their way to Grandmaster!
+
+The answers we find could be used by amateurs and pro Overwatch gamers alike. We think of our analysis as the start of something like ["Moneyball"](https://en.wikipedia.org/wiki/Moneyball) for Overwatch.
 
 ### Methods
 
@@ -36,6 +52,8 @@ One of the team members plays Overwatch, but overall we're interested in the que
 
 
 ### Discussion
+
+So, what should a player who wants to improve their skill rating focus on?
 
 
 
