@@ -44,16 +44,67 @@ Overall we're interested in the question: if a player wants to improve their SR,
 The answers we find could be used by amateurs and pro Overwatch gamers alike. We think of our analysis as the start of something like ["Moneyball"](https://en.wikipedia.org/wiki/Moneyball) for Overwatch.
 
 ### Methods
+- relevel top hero - brian
+
+- glimpse - kai
+
+- summary - kai
+
+- bar chart of top players - brian
+
+- full additive model without redundant variables - brian
+
+- fail shapiro test, show qq plot - brian
+
+- pairs plots response ~ 5 predictors - kai
+
+- correlation - brian
+
+- log(gp) - brian
+
+- step bic + aic - kai
+
+- show r^2 - kai
+
+- 2 anova tests - kai
+
+
+
+
+```{r}
+library(readr)
+
+clean_df <- read_csv("data/clean-data.csv")
+predictors = colnames(clean_df)[1:60]
+predictors = append(predictors, "games_played")
+```
+
+```{r}
+for (name in predictors) {
+  plot(as.formula(paste("skill_rating ~ ", paste(name))), data = clean_df)
+}
+```
+
+```{r}
+
+```
+
 
 
 
 ### Results
 
+- diagnostics of final model - brian
+
+- 2 anova tests - kai
 
 
 ### Discussion
 
 So, what should a player who wants to improve their skill rating focus on?
+
+- coef plot - brian
+- coefficients interpretation - brian, kai
 
 
 
