@@ -1,3 +1,6 @@
 .DS_Store
 *.zip
 .Rhistory
+.RData
+overwatch-analysis_cache
+overwatch-analysis_files
