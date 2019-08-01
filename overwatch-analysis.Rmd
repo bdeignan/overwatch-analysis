@@ -380,7 +380,18 @@ For example ... INTERPRET ANA's dummy variable here
 
 - coefficients interpretation - brian, kai
 
+Looking at the coefficients for our interaction predictor `top_hero:average.allDamageDoneAvgPer10Min` we see that `top_heroana:average.allDamageDoneAvgPer10Min` and `top_heromercy:average.allDamageDoneAvgPer10Min` are both significant at $\alpha = 0.01$. 
 
+We see that the coefficients for `top_heroana:average.allDamageDoneAvgPer10Min`: ``r coef(back_aic)["top_heroana:average.allDamageDoneAvgPer10Min"]`` and `top_heromercy:average.allDamageDoneAvgPer10Min`: ``r coef(back_aic)["top_heromercy:average.allDamageDoneAvgPer10Min"]`` are both negative. This tells us that doing damage as a support character does not boost your skill rating as much as if you were doing damange as a tank. 
+
+We can see this by comparing our coefficients: 
+
+- `top_heroana:average.allDamageDoneAvgPer10Min` + `allDamageDoneAvgPer10Min` = ``r coef(back_aic)["top_heroana:average.allDamageDoneAvgPer10Min"] + coef(back_aic)["average.allDamageDoneAvgPer10Min"]``
+- `average.allDamageDoneAvgPer10Min` = ``r coef(back_aic)["average.allDamageDoneAvgPer10Min"]``
+
+Because the `top_hero` predictor is releveled with `Reinhardt` (a tank) as the base, we can interpret the above values as such: when playing as a tank your skill rating benefits more by doing a lot of damage than if you were doing a lot of damage as a support character, Ana & Mercy. 
+
+Now, looking at `games_played`: ``r coef(back_aic)["games_played"]``, we can see that your skill rating also increases with the number of games you play. This makes sense because it is fair to assume that you improve as a player the more you play. Practice always helps!
 
 ### Appendix
 
