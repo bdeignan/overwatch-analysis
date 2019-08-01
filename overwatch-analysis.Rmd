@@ -70,6 +70,11 @@ df %>% glimpse()
 
 - summary - kai
 
+```{r}
+df %>% summary()
+```
+
+
 ```{r, echo=FALSE, cache=TRUE}
 mean_sr = mean(df$skill_rating)
 sd_sr = sd(df$skill_rating)
@@ -102,7 +107,7 @@ df %>% group_by(top_hero_type, top_hero) %>% summarise(n = n()) %>%
   scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9"))
 ```
 
-birefly mention hero types and what heros are: https://en.wikipedia.org/wiki/Characters_of_Overwatch#Characters
+briefly mention hero types and what heros are: https://en.wikipedia.org/wiki/Characters_of_Overwatch#Characters
 
 ```{r}
 # borrowed from week 8 HW
@@ -159,6 +164,17 @@ There are two major problems in the full additive model: heteroskedasticity and 
 
 - pairs plots response ~ 5 predictors - kai
 
+```{r}
+pair_vars = c("best.meleeFinalBlowsMostInGame",
+              "best.offensiveAssistsMostInGame",
+              "average.objectiveTimeAvgPer10Min",
+              "average.allDamageDoneAvgPer10Min",
+              "average.objectiveKillsAvgPer10Min",
+              "games_played",
+              "skill_rating")
+pairs(df[pair_vars])
+```
+
 - correlation - brian
 
 ```{r}
@@ -203,32 +219,65 @@ We can see that the natural log transform of `games_played` makes the positive r
 
 - step bic + aic - kai
 
+```{r}
+df_final = df %>% select(one_of(c(pair_vars, 'top_hero')))
+
+fit = lm(skill_rating ~ top_hero : . + ., data = df_final)
+summary(fit)
+```
+
+```{r include=FALSE}
+# backward AIC
+back_aic = step(fit, direction = "backward")
+summary(back_aic)
+
+# backward BIC
+n = length(resid(fit))
+back_bic = step(fit, direction = "backward", k = log(n))
+summary(back_bic)
+```
+
+
+We wanted a smaller model for better explanatory power so we first tried a backwards search using BIC. However, the adjusted $R^2$ was lower than the model chosen using a backwards search using AIC.
+
 - show r^2 - kai
+
+```{r}
+summary(back_aic)$adj.r.squared
+summary(back_bic)$adj.r.squared
+```
 
 - 2 anova tests - kai
 
-
-
-
 ```{r}
-library(readr)
-
-clean_df <- read_csv("data/clean-data.csv")
-predictors = colnames(clean_df)[1:60]
-predictors = append(predictors, "games_played")
+# null model
+fit_null = lm(skill_rating ~ 1, data = df)
+# model chosen by backwards BIC
+fit_full = lm(skill_rating ~ best.meleeFinalBlowsMostInGame + 
+    best.offensiveAssistsMostInGame + average.allDamageDoneAvgPer10Min + 
+    average.objectiveKillsAvgPer10Min + games_played, 
+    data = df)
+anova(fit_null, fit_full)
 ```
 
-```{r}
-for (name in predictors) {
-  plot(as.formula(paste("skill_rating ~ ", paste(name))), data = clean_df)
-}
-```
+Here we reject the null hypothesis and confirm that the model chosen by using a backwards search using BIC is significant.
 
 ```{r}
-
+# compare BIC with AIC 
+# model chosen by backwards BIC
+fit_null = lm(skill_rating ~ best.meleeFinalBlowsMostInGame + 
+    best.offensiveAssistsMostInGame + average.allDamageDoneAvgPer10Min + 
+    average.objectiveKillsAvgPer10Min + games_played, 
+    data = df)
+# model chosen by backwards AIC
+fit_full = lm(skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + 
+    best.offensiveAssistsMostInGame + average.allDamageDoneAvgPer10Min + 
+    average.objectiveKillsAvgPer10Min + games_played + top_hero:average.allDamageDoneAvgPer10Min, 
+    data = df)
+anova(fit_null, fit_full)
 ```
 
-
+Again, we reject the null hypothesis and confirm that the addition of the interaction predictor `top_hero:average.allDamageDoneAvgPer10Min` to the model is significant (the model chosen by backwards AIC).
 
 
 ### Results
@@ -236,6 +285,38 @@ for (name in predictors) {
 - diagnostics of final model - brian
 
 - 2 anova tests - kai
+
+We use 2 ANOVA tests to confirm that our final model is the best.
+
+```{r}
+# null model
+fit_null = lm(skill_rating ~ 1, data = df)
+# model chosen by backwards BIC
+fit_full = lm(skill_rating ~ best.meleeFinalBlowsMostInGame + 
+    best.offensiveAssistsMostInGame + average.allDamageDoneAvgPer10Min + 
+    average.objectiveKillsAvgPer10Min + games_played, 
+    data = df)
+anova(fit_null, fit_full)
+```
+
+Here we reject the null hypothesis and confirm that the model chosen by using a backwards search using BIC is significant.
+
+```{r}
+# compare BIC with AIC 
+# model chosen by backwards BIC
+fit_null = lm(skill_rating ~ best.meleeFinalBlowsMostInGame + 
+    best.offensiveAssistsMostInGame + average.allDamageDoneAvgPer10Min + 
+    average.objectiveKillsAvgPer10Min + games_played, 
+    data = df)
+# model chosen by backwards AIC
+fit_full = lm(skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + 
+    best.offensiveAssistsMostInGame + average.allDamageDoneAvgPer10Min + 
+    average.objectiveKillsAvgPer10Min + games_played + top_hero:average.allDamageDoneAvgPer10Min, 
+    data = df)
+anova(fit_null, fit_full)
+```
+
+Again, we reject the null hypothesis and confirm that the addition of the interaction predictor `top_hero:average.allDamageDoneAvgPer10Min` to the model is significant (the model chosen by backwards AIC).
 
 
 ### Discussion
