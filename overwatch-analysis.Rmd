@@ -31,6 +31,12 @@ Among the community, SR is divided into categories depending on how high the rat
 - 3500-3999 Master
 - 4000-5000 Grandmaster
 
+##### Gameplay
+
+Overwatch pairs two teams up against each other in a match, or game. Each team has six members who must each choose a unique character, called a "hero". More on that later. The goal is to damage the other team and help keep your team protected. In addition to damaging the other team's players, the team has an "objective" to complete, which varies from map to map. A "map" here refers to a setting where a match takes place. The objective in Overwatch typically depends on members from one team being located in a specific area, refered to as the objective, while the other team isn't in that same area. While in the objective area, your team accrues time spent on the objective. If your team accrues enough time, you win the match. It's a little more complicated than this but that's essentially it. 
+
+Holding down an objecitve area is where damaging your opponent comes in to play. When the other team tries to get on the objective at the same time as your team, you deal them damage to keep them away. Hopefully do enough that the opponent "dies". But don't worry, Overwatch is what's called a "respawn" game. After a player "dies" from taking too much damage, they must wait a few seconds and then they rejoin the game and try again to take the objective from the other team
+
 ##### Data
 
 We scraped a snapshot of PS4 players' SR (it changes from game to game) whose profiles were public on overwatchtracker.com. We then scraped players' career statistics from the games that they've played from the open source API ovrstat.com which returns convenient JSON formatted data.
@@ -56,6 +62,7 @@ df = read_csv('data/clean-data.csv')
 Here we releved our factor variable to use the character `Reinhardt` as the reference level. Reinhardt is the most popular hero used in the game and would be a good baseline to use for comparison.
 
 ```{r, echo=FALSE, message=FALSE}
+# relevel top hero - brian
 df = df %>% 
   select(-c(game.gamesPlayed, game.timePlayed, rank)) %>% 
   mutate(top_hero = relevel(top_hero %>% as.factor(), ref='reinhardt'))
@@ -86,12 +93,18 @@ curve(dnorm(x, mean = mean_sr, sd = sd_sr),
 
 Above is a normalized (to sum to 1) histogram of the reponse we want to model `skill_rating`. It appears that `skill_rating` (blue bars) looks a lot like a normal distribution (the orange line). This is a good thing, as this makes it easier to adhere to the assumptions of linear regression model we will use to explain the variation in player skill.
 
-- bar chart of top players - brian
-
 ##### Most played heroes
 
+At the time of the analysis, there are 30 heroes in Overwatch to choose from. Each hero has a unique play style. There are three types of heroes which determine the play style: Tank, Damage, or Support. Tank heroes can take a lot of damage and typically protect their teammates while trying to remain on the objective area. Damage heroes have the ability to do the most damage to the opposition. They have lower health than tank heroes, meaning they can "die" more easily. Lastly, there are support heroes. These heroes typically have the least health and do the least amount of damage to opponents. Instead of holding down an objective or damaging opponents, Support heroes main job to restore the health of their teammates, which is their primary special role on the team. That being said, all heroes can do damage and a really good Support player can beat a hard-to-kill tank in the game. You can read more about the heroes [here](https://en.wikipedia.org/wiki/Characters_of_Overwatch#Characters).
+
+First, let's see which heroes are the most popular to play, and which type of hero they are.
+
 ```{r, echo=FALSE, cache=TRUE}
-df %>% group_by(top_hero_type, top_hero) %>% summarise(n = n()) %>% 
+# - bar chart of top players - brian
+df %>% 
+  mutate(top_hero_type = top_hero_type %>% str_to_title(), top_hero = top_hero %>% str_to_title()) %>%
+  group_by(top_hero_type, top_hero) %>% 
+  summarise(n = n()) %>% 
   ggplot(., aes(y=n, x=reorder(top_hero, n), fill=top_hero_type)) + 
   geom_bar(stat = "identity") +
   coord_flip() +
@@ -101,11 +114,11 @@ df %>% group_by(top_hero_type, top_hero) %>% summarise(n = n()) %>%
   scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9"))
 ```
 
-briefly mention hero types and what heros are: https://en.wikipedia.org/wiki/Characters_of_Overwatch#Characters
+Reinhardt, a Tank, and Moira, a Support hero, are by far the two most popular choices in competitive Overwatch games on Playstation. Overall, Damage heroes are less often a player's most played character. That's because in competitive matches, strategy and special abilities like healing teammates are more important just damaging the opponents. For example, the most popular hero Reinhardt has the largest shield in the game which all of his other teammates can stand behind and be protected from oppoisition damage. This is really useful when trying to remain on the objective space and keeping the other team out.
 
 Here we see that the `tank` and `support` type heroes are more popular than the `damage` heroes. Reinhardt was the most popular tank during the open beta and it appears his popularity remains strong. `Ana` is considered one of the most difficult heroes to play and master. The game developers may be interested to dig deeper to find out why `Pharah` is the least popular.
 
-```{r}
+```{r, echo=FALSE}
 # borrowed from week 8 HW
 diagnostics <- function(model,
                         pcol = 'grey',
@@ -134,6 +147,9 @@ diagnostics <- function(model,
 }
 ```
 
+##### Full additive model
+
+We'll start to understand what predicts `skill_rating` by using all available predictors, including the most popular hero got a given player shown in the chart above.
 
 We start with a basic additive model to get a sense of our data and to explore potential issues. Let's see if our assumptions of linear regression hold true (LINE).
 
@@ -386,6 +402,3 @@ Because the `top_hero` predictor is releveled with `Reinhardt` (a tank) as the b
 Now, looking at `games_played`: ``r coef(back_aic)["games_played"]``, we can see that your skill rating also increases with the number of games you play. This makes sense because it is fair to assume that you improve as a player the more you play. Practice always helps!
 
 ### Appendix
-
-##### Scraping the data
-TO DO
