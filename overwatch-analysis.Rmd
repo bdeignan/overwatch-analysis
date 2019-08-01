@@ -53,7 +53,7 @@ library(lmtest)
 df = read_csv('data/clean-data.csv')
 ```
 
-- relevel top hero - brian
+Here we releved our factor variable to use the character `Reinhardt` as the reference level. Reinhardt is the most popular hero used in the game and would be a good baseline to use for comparison.
 
 ```{r, echo=FALSE, message=FALSE}
 df = df %>% 
@@ -61,16 +61,10 @@ df = df %>%
   mutate(top_hero = relevel(top_hero %>% as.factor(), ref='reinhardt'))
 ```
 
-
-- glimpse - kai
+Let's explore the data a bit more...
 
 ```{r}
 df %>% glimpse()
-```
-
-- summary - kai
-
-```{r}
 df %>% summary()
 ```
 
@@ -109,6 +103,8 @@ df %>% group_by(top_hero_type, top_hero) %>% summarise(n = n()) %>%
 
 briefly mention hero types and what heros are: https://en.wikipedia.org/wiki/Characters_of_Overwatch#Characters
 
+Here we see that the `tank` and `support` type heroes are more popular than the `damage` heroes. Reinhardt was the most popular tank during the open beta and it appears his popularity remains strong. `Ana` is considered one of the most difficult heroes to play and master. The game developers may be interested to dig deeper to find out why `Pharah` is the least popular.
+
 ```{r}
 # borrowed from week 8 HW
 diagnostics <- function(model,
@@ -139,7 +135,7 @@ diagnostics <- function(model,
 ```
 
 
-- full additive model without redundant variables - brian
+We start with a basic additive model to get a sense of our data and to explore potential issues. Let's see if our assumptions of linear regression hold true (LINE).
 
 ```{r, cache=TRUE}
 df %>% summary
@@ -148,21 +144,24 @@ fit_add_full = lm(skill_rating ~ . -top_hero_type, data = df)
 diagnostics(fit_add_full, testit = FALSE)
 ```
 
-- fail shapiro test, show qq plot - brian
 
 ```{r}
-fm_diag = diagnostics(fit_add_full, plotit = FALSE)
+(fm_diag = diagnostics(fit_add_full, plotit = FALSE))
  # TO DO WRITE OUT TEST RESUTS OF SHAPIRO WILK
 fm_bp = bptest(fit_add_full)
  # TO DO WRITE OUT TEST RESUTS OF BP
 fm_bp
 ```
 
+Our full additive model fails both the Shapiro-Wilk and Bruesch-Pagan test. We reject the null hypothesis in the Shapiro-Wilk test which means that there is only a small probability that the data could have been sampled from a normal distribution.
+
+Also, we reject the null of homoscedasticity, which means that the constant variance assumption is violated. 
+
 ##### Full additive model problems
 
 There are two major problems in the full additive model: heteroskedasticity and non-normal residuals. We can try to find the correct model and apply transformations to the predictors. Or, what we'll do instead is think more carefully about the predictors and hand-pick a smaller model to start with based on exploratory data analysis and our knowledge of Overwatch.
 
-- pairs plots response ~ 5 predictors - kai
+Let's look at the collinearity of our predictor variables.
 
 ```{r}
 pair_vars = c("best.meleeFinalBlowsMostInGame",
@@ -175,7 +174,7 @@ pair_vars = c("best.meleeFinalBlowsMostInGame",
 pairs(df[pair_vars])
 ```
 
-- correlation - brian
+These pairwise plots look good. The `average.allDamageDoneAvgPer10Min` and `average.objectiveKillsAvgPer10Min` predictors appear to be slightly correlated but doesn't seem strong enough to remove one.
 
 ```{r}
 find_cor_sr <- function(data){
@@ -223,7 +222,7 @@ df_final = df %>%
 ```
 
 
-- step bic + aic - kai
+Now, using the predictors we've identifed we run a backwards search starting with all of the predictors in the model.
 
 ```{r}
 df_final = df %>% select(one_of(c(pair_vars, 'top_hero')))
@@ -243,17 +242,14 @@ back_bic = step(fit, direction = "backward", k = log(n))
 summary(back_bic)
 ```
 
-
 We wanted a smaller model for better explanatory power so we first tried a backwards search using BIC. However, the adjusted $R^2$ was lower than the model chosen using a backwards search using AIC.
-
-- show r^2 - kai
 
 ```{r}
 summary(back_aic)$adj.r.squared
 summary(back_bic)$adj.r.squared
 ```
 
-- 2 anova tests - kai
+We see here that the model chosen by the AIC backwards search has more explanatory power.
 
 ```{r}
 # null model
@@ -288,7 +284,6 @@ Again, we reject the null hypothesis and confirm that the addition of the intera
 
 ### Results
 
-- diagnostics of final model - brian
 
 ```{r}
 fit_final = lm(formula = skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + 
@@ -303,9 +298,6 @@ plot(fitted(fit_final), resid(fit_final))
 hist(rstandard(fit_final))
 bptest(fit_final)
 ```
-
-
-- 2 anova tests - kai
 
 We use 2 ANOVA tests to confirm that our final model is the best.
 
