@@ -389,7 +389,7 @@ We can see this by comparing our coefficients:
 - `top_heroana:average.allDamageDoneAvgPer10Min` + `allDamageDoneAvgPer10Min` = ``r coef(back_aic)["top_heroana:average.allDamageDoneAvgPer10Min"] + coef(back_aic)["average.allDamageDoneAvgPer10Min"]``
 - `average.allDamageDoneAvgPer10Min` = ``r coef(back_aic)["average.allDamageDoneAvgPer10Min"]``
 
-Because the `top_hero` predictor is releveled with `Reinhardt` (a tank) as the base, we can interpret the above values as such: when playing as a tank your skill rating benefits more by doing a lot of damage than if you were doing a lot of damage as a support character, Ana & Mercy. 
+Because the `top_hero` predictor is releveled with `Reinhardt` (a tank) as the base, we can interpret the above values as such: when playing as a tank your skill rating benefits more by doing a lot of damage than if you were doing a lot of damage as a support character (Ana & Mercy). 
 
 Now, looking at `games_played`: ``r coef(back_aic)["games_played"]``, we can see that your skill rating also increases with the number of games you play. This makes sense because it is fair to assume that you improve as a player the more you play. Practice always helps!
 
