@@ -127,7 +127,7 @@ diagnostics <- function(model,
   
   if (testit){
     st <- shapiro.test(resid(model))
-    decision <- ifelse(st$p.value < 0.05, 'Reject', 'Fail to Reject')
+    decision <- ifelse(st$p.value < alpha, 'Reject', 'Fail to Reject')
     return(list(p_val=st$p.value, decision=decision))
   }
 }
@@ -201,6 +201,12 @@ plot(skill_rating ~ log(games_played), data = df)
 
 We can see that the natural log transform of `games_played` makes the positive relationship with `skill_rating` easier to see and brings in the long tail of players who have played many more games than the median player. This will help prevent heteroskedasticity with this predictor in the linear model.
 
+```{r, echo=FALSE}
+df_final = df %>% 
+  mutate(games_played = log(games_played))
+```
+
+
 - step bic + aic - kai
 
 - show r^2 - kai
@@ -235,6 +241,21 @@ for (name in predictors) {
 
 - diagnostics of final model - brian
 
+```{r}
+fit_final = lm(formula = skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + 
+    best.offensiveAssistsMostInGame + average.allDamageDoneAvgPer10Min + 
+    average.objectiveKillsAvgPer10Min + games_played + top_hero:average.allDamageDoneAvgPer10Min, 
+    data = df_final)
+
+summary(fit_final)
+diagnostics(fit_final, alpha = 0.01)
+
+plot(fitted(fit_final), resid(fit_final))
+hist(rstandard(fit_final))
+bptest(fit_final)
+```
+
+
 - 2 anova tests - kai
 
 
@@ -243,9 +264,44 @@ for (name in predictors) {
 So, what should a player who wants to improve their skill rating focus on?
 
 - coef plot - brian
+
+```{r}
+library(coefplot)
+library(dotwhisker)
+library(broom)
+
+sort(coef(fit_final), decreasing = TRUE) %>% head(5)
+sort(coef(fit_final), decreasing = FALSE) %>% head(5)
+fit_coefs = coef(fit_final)
+fit_coefs_names = names(fit_coefs)
+first_order_th = grepl('top_hero', fit_coefs_names) & !(grepl('DoneAvgPer10Min', fit_coefs_names))
+fit_coefs_names[first_order_th]
+
+coefplot(fit_final, predictors=c('top_hero'))
+
+m1 = tidy(fit_final)
+
+m1 %>% 
+  filter(grepl('top_hero', term) & !(grepl('DoneAvgPer10Min', term))) %>% 
+  mutate(term = str_replace(term, 'top_hero', '') %>% str_to_title()) %>% 
+  dwplot(vline = geom_vline(xintercept = 0, colour = "grey60", linetype = 2)) +
+  theme_bw() +
+  theme(legend.title = element_blank()) +
+  guides(shape='none', colour='none') + 
+  labs(x='Coefficients and confidence intervals', caption = 'Omitted hero is Reinhardt') + 
+  ggtitle('Effect of Choosing Certain Heroes on Skill Rating')
+
+```
+
+It's pretty clear that playing Ana, Mercy and Moira are associated with higher skill rating. These three heroes are all support heroes which suggests learning how to be a good support hero on your team is a good way to boost your skill rating.
+
+For example ... INTERPRET ANA's dummy variable here
+
 - coefficients interpretation - brian, kai
 
 
 
 ### Appendix
 
+##### Scraping the data
+TO DO
