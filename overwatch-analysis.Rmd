@@ -1,9 +1,10 @@
 ---
 title: "Data Analysis Project - How to Increase your Overwatch Skill Rating"
 author: "Brian Deignan (deignan3) & Kai Chang (kaihc2)"
-date: 'July 29, 2019'
+date: 'August 3, 2019'
 output:
-  html_document: 
+  html_document:
+    theme: flatly 
     toc: yes
     fig_width: 10
   pdf_document: default
@@ -52,7 +53,23 @@ The answers we find could be used by amateurs and pro Overwatch gamers alike. We
 ### Methods
 ```{r, echo=FALSE, message=FALSE}
 library(tidyverse)
-library(lmtest)
+
+# r = getOption("repos")
+# r["CRAN"] = "http://cran.us.r-project.org"
+# options(repos = r)
+
+# putting necessary libraries here too
+if (!require(coefplot)) {
+    install.packages("coefplot")
+    require(coefplot)
+}
+# putting necessary libraries here too
+if (!require(lmtest)) {
+    install.packages("coefplot")
+    require(lmtest)
+}
+
+
 ```
 
 ```{r, message=FALSE}
@@ -75,6 +92,8 @@ df %>% glimpse()
 df %>% summary()
 ```
 
+
+The main question we want to tackle is: what explains the variation in `skill_rating`? Let's first look at the distribution of `skill_rating`.
 
 ```{r, echo=FALSE, cache=TRUE}
 mean_sr = mean(df$skill_rating)
@@ -154,7 +173,6 @@ We'll start to understand what predicts `skill_rating` by using all available pr
 We start with a basic additive model to get a sense of our data and to explore potential issues. Let's see if our assumptions of linear regression hold true (LINE).
 
 ```{r, cache=TRUE}
-df %>% summary
 fit_add_full = lm(skill_rating ~ . -top_hero_type, data = df)
 
 diagnostics(fit_add_full, testit = FALSE)
@@ -163,9 +181,7 @@ diagnostics(fit_add_full, testit = FALSE)
 
 ```{r}
 (fm_diag = diagnostics(fit_add_full, plotit = FALSE))
- # TO DO WRITE OUT TEST RESUTS OF SHAPIRO WILK
 fm_bp = bptest(fit_add_full)
- # TO DO WRITE OUT TEST RESUTS OF BP
 fm_bp
 ```
 
@@ -179,7 +195,7 @@ There are two major problems in the full additive model: heteroskedasticity and 
 
 Let's look at the collinearity of our predictor variables.
 
-```{r}
+```{r, fig.height=10}
 pair_vars = c("best.meleeFinalBlowsMostInGame",
               "best.offensiveAssistsMostInGame",
               "average.objectiveTimeAvgPer10Min",
@@ -199,38 +215,29 @@ find_cor_sr <- function(data){
 }
 
 linear_cors = find_cor_sr(df)
-sort(linear_cors, decreasing=TRUE) %>% head(5)
-sort(linear_cors, decreasing=FALSE) %>% head(5)
-
-cor(df$combat.meleeFinalBlows, df$best.meleeFinalBlowsMostInGame)
-
-cor(df$average.allDamageDoneAvgPer10Min, df$average.barrierDamageDoneAvgPer10Min)
-cor(df$average.allDamageDoneAvgPer10Min, df$best.offensiveAssistsMostInGame)
 ```
 
-Explain `best.meleeFinalBlowsMostInGame` and why `combat.meleeFinalBlows` is redundant. wtih this.
+The five most positively correlated variables with `skill_rating` are: ``r sort(linear_cors, decreasing=TRUE) %>% head(5) %>% names()``.
 
-Explain `average.allDamageDoneAvgPer10Min` and why it's more interpretable than `average.barrierDamageDoneAvgPer10Min` which is a result of your overall damage done per 10 minutes.
+Among the most positively correlated variables there are some redundant variables. For example, `best.meleeFinalBlowsMostInGame` and `combat.meleeFinalBlows` are both measures of how many melees a player does in a game that "killed" an opponent hero. They are highly correlated, with a correlation coefficient of `r cor(df$combat.meleeFinalBlows, df$best.meleeFinalBlowsMostInGame)`. So we only need to keep the more correlated variable in our next model.
 
-Explain `average.objectiveKillsAvgPer10Min` and why it's correlated with `average.objectiveTimeAvgPer10Min` but more actionable since it's more specific about what to do when a player is on the objective area.
+Another conceptually redundant pair of variables is `average.allDamageDoneAvgPer10Min` and `average.barrierDamageDoneAvgPer10Min`. `average.allDamageDoneAvgPer10Min` is more interpretable than `average.barrierDamageDoneAvgPer10Min`. That's because when you average a lot of damage output per 10 minutes, and there happens to be a barrier you're damaging (for example, Reinhardt's shield), then `average.barrierDamageDoneAvgPer10Min` is just a side effect of damage output. And this is seen in the data, these two variables are highly correlated, with a corrleation of `r cor(df$average.allDamageDoneAvgPer10Min, df$average.barrierDamageDoneAvgPer10Min)`.
 
-And that's it. Those are the most correlated linear variables with SR we have.
+The two most negatively correlated variables with `skill_rating` are: ``r sort(linear_cors, decreasing=FALSE) %>% head(2) %>% names()``.
 
-- log(gp) - brian
+Again, these two variables are conceptually very similar so we only need to keep one in the next model: `average.objectiveKillsAvgPer10Min`. `average.objectiveKillsAvgPer10Min` is more actionable than `average.objectiveTimeAvgPer10Min` since it's more specific about what to do when a player is on the objective area, get "kills".
 
 ##### Number of games played as a predictor
 
 A player may need to get better to improve their "average" statistics laid out in the correlated variables above. But one thing *any* player can always do is play more. So we also want to consider the number of games played as a predictor of `skill_rating` as it's both actionable and an obvious variable to control for, i.e. are the most skilled just those who have played the most?
 
 ```{r}
-cor(df$skill_rating, df$games_played)
-
 par(mfrow=c(1,2))
 plot(skill_rating ~ games_played, data = df)
 plot(skill_rating ~ log(games_played), data = df)
 ```
 
-We can see that the natural log transform of `games_played` makes the positive relationship with `skill_rating` easier to see and brings in the long tail of players who have played many more games than the median player. This will help prevent heteroskedasticity with this predictor in the linear model.
+We can see that the natural log transform of `games_played` makes the positive relationship with `skill_rating` easier to see and brings in the long tail of players who have played many more games than the median player. This will help prevent heteroskedasticity with this predictor in the linear model. The correlation between `games_played` and `skill_rating` is `r cor(df$skill_rating, log(df$games_played))`.
 
 ```{r, echo=FALSE}
 df_final = df %>% 
@@ -292,6 +299,7 @@ fit_full = lm(skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame +
     best.offensiveAssistsMostInGame + average.allDamageDoneAvgPer10Min + 
     average.objectiveKillsAvgPer10Min + games_played + top_hero:average.allDamageDoneAvgPer10Min, 
     data = df)
+
 anova(fit_null, fit_full)
 ```
 
@@ -299,21 +307,6 @@ Again, we reject the null hypothesis and confirm that the addition of the intera
 
 
 ### Results
-
-
-```{r}
-fit_final = lm(formula = skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + 
-    best.offensiveAssistsMostInGame + average.allDamageDoneAvgPer10Min + 
-    average.objectiveKillsAvgPer10Min + games_played + top_hero:average.allDamageDoneAvgPer10Min, 
-    data = df_final)
-
-summary(fit_final)
-diagnostics(fit_final, alpha = 0.01)
-
-plot(fitted(fit_final), resid(fit_final))
-hist(rstandard(fit_final))
-bptest(fit_final)
-```
 
 We use 2 ANOVA tests to confirm that our final model is the best.
 
@@ -326,6 +319,7 @@ fit_full = lm(skill_rating ~ best.meleeFinalBlowsMostInGame +
     average.objectiveKillsAvgPer10Min + games_played, 
     data = df)
 anova(fit_null, fit_full)
+summary(fit_full)$adj.r.squared
 ```
 
 Here we reject the null hypothesis and confirm that the model chosen by using a backwards search using BIC is significant.
@@ -343,30 +337,42 @@ fit_full = lm(skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame +
     average.objectiveKillsAvgPer10Min + games_played + top_hero:average.allDamageDoneAvgPer10Min, 
     data = df)
 anova(fit_null, fit_full)
+summary(fit_full)$adj.r.squared
 ```
 
 Again, we reject the null hypothesis and confirm that the addition of the interaction predictor `top_hero:average.allDamageDoneAvgPer10Min` to the model is significant (the model chosen by backwards AIC).
 
+The model chosen by AIC has a higher $R^2$ than the model chosen using BIC. Therefore, our best model is the one chosen by AIC. We'll now check the assumptions of the model to make sure we can trust the hypothesis tests since we're interested in find out what variables best explain `skill_rating` and how they affect `skill_rating`.
+
+```{r}
+fit_final = lm(formula = skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + 
+    best.offensiveAssistsMostInGame + average.allDamageDoneAvgPer10Min + 
+    average.objectiveKillsAvgPer10Min + games_played + top_hero:average.allDamageDoneAvgPer10Min, 
+    data = df_final)
+
+summary(fit_final)
+diagnostics(fit_final, alpha = 0.01, testit = FALSE)
+par(mfrow=c(1,1))
+hist(rstandard(fit_final), main='Histogram of standardized residuals')
+```
+
+```{r}
+sw_final = diagnostics(fit_final, alpha = 0.01, plotit = FALSE)
+bp_final = bptest(fit_final)
+```
+
+At the level $\alpha = 0.05$, we fail to reject the $H_0$ of the Shapiro-Wilk test and find that the residuals don't violate the normality assumption, with a $p-value$ of `r sw_final$p_val`.
+
+Similarly, at the level $\alpha = 0.05$, we find evidence that the errors are homoskedastic, failing to reject $H_0$ for the Breusch-Pagan test, with a $p-value$ of `r bp_final$p.value`.
 
 ### Discussion
 
-So, what should a player who wants to improve their skill rating focus on?
-
-- coef plot - brian
+So, what should a player who wants to improve their skill rating focus on? We look to our best model to help us.
 
 ```{r}
 library(coefplot)
 library(dotwhisker)
 library(broom)
-
-sort(coef(fit_final), decreasing = TRUE) %>% head(5)
-sort(coef(fit_final), decreasing = FALSE) %>% head(5)
-fit_coefs = coef(fit_final)
-fit_coefs_names = names(fit_coefs)
-first_order_th = grepl('top_hero', fit_coefs_names) & !(grepl('DoneAvgPer10Min', fit_coefs_names))
-fit_coefs_names[first_order_th]
-
-coefplot(fit_final, predictors=c('top_hero'))
 
 m1 = tidy(fit_final)
 
@@ -382,11 +388,11 @@ m1 %>%
 
 ```
 
-It's pretty clear that playing Ana, Mercy and Moira are associated with higher skill rating. These three heroes are all support heroes which suggests learning how to be a good support hero on your team is a good way to boost your skill rating.
+It's pretty clear that playing Ana, Mercy, Lucio and Moira are associated with higher skill rating. These four heroes are all support heroes which suggests learning how to be a good support hero on your team is a good way to boost your skill rating.
 
-For example ... INTERPRET ANA's dummy variable here
+For example, for players who "main" Ana rather than Reinhardt, that is those who play Ana the most, they have a higher `skill_rating`. Ana players on average have a `r coef(back_aic)["top_heroana"]` higher `skill_rating` than players who "main" Reinhardt.
 
-- coefficients interpretation - brian, kai
+So, if you want to get a higher `skill_rating`, you should consider playing one the four Support heroes: Ana, Lucio, Mercy or Moira.
 
 Looking at the coefficients for our interaction predictor `top_hero:average.allDamageDoneAvgPer10Min` we see that `top_heroana:average.allDamageDoneAvgPer10Min` and `top_heromercy:average.allDamageDoneAvgPer10Min` are both significant at $\alpha = 0.01$. 
 
@@ -401,4 +407,13 @@ Because the `top_hero` predictor is releveled with `Reinhardt` (a tank) as the b
 
 Now, looking at `games_played`: ``r coef(back_aic)["games_played"]``, we can see that your skill rating also increases with the number of games you play. Rescaling the coefficient back to it's orignal units $e^\beta$ = ``r exp(coef(back_aic)["games_played"])`` we see that your average skill rating goes up by ~`r exp(coef(back_aic)["games_played"])` points per game played. This makes sense because it is fair to assume that you improve as a player the more you play. Practice always helps!
 
-### Appendix
+##### Summary of findings
+
+Our best model shows that if you want to climb the Overwatch skill leaderboard on Playstation 4, you should:
+
+- Play Support heroes
+- If you play a Tank, do a lot of damage to opponents, don't just stand there and protect your teammates. Go on the offensive!
+- Play more games! This is obvious but important to remember. Sometimes you will feel you hit a skill wall and cannot improve. Our model however provides evidence that you should keep going! Play more and your `skill_rating` should improve.
+
+The next step that could improve this analysis would be to track players' `skill_rating` over time and track what changes in variables lead to changes in `skill_rating`. However, for a first analysis of this data by anyone (to the best of our knowledge), we were able to get a good explanatory model of skill in Overwatch to help players focus their efforts and climb the rankings.
+
