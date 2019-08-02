@@ -15,9 +15,7 @@ urlcolor: cyan
 
 ***
 
-## Explaining the Overwatch Skill Rating
-
-### Introduction
+## Introduction
 Our dataset consists of information on competitive gamers who play the video game Overwatch on Playstation 4. [Overwatch](https://en.wikipedia.org/wiki/Overwatch_(video_game)) is a team-based multiplayer first-person shooter developed and published by Blizzard Entertainment. Overwatch assigns players into two teams of six, with each player selecting from a roster of 30 characters, known as "heroes", each with a unique style of play whose roles are divided into three general categories that fit their role. Players on a team work together to secure and defend control points on a map or escort a payload across the map in a limited amount of time. 
 
 Overwatch has a large community and E-Sports presence online. Players' skill in competitive games is calculated by a "secret" formula at Blizzard that leads to a "skill rating", or "SR" for short. SR ranges from 0 to 5,000, the higher the score the better the player.
@@ -32,25 +30,25 @@ Among the community, SR is divided into categories depending on how high the rat
 - 3500-3999 Master
 - 4000-5000 Grandmaster
 
-##### Gameplay
+#### Gameplay
 
 Overwatch pairs two teams up against each other in a match, or game. Each team has six members who must each choose a unique character, called a "hero". More on that later. The goal is to damage the other team and help keep your team protected. In addition to damaging the other team's players, the team has an "objective" to complete, which varies from map to map. A "map" here refers to a setting where a match takes place. The objective in Overwatch typically depends on members from one team being located in a specific area, refered to as the objective, while the other team isn't in that same area. While in the objective area, your team accrues time spent on the objective. If your team accrues enough time, you win the match. It's a little more complicated than this but that's essentially it. 
 
-Holding down an objecitve area is where damaging your opponent comes in to play. When the other team tries to get on the objective at the same time as your team, you deal them damage to keep them away. Hopefully do enough that the opponent "dies". But don't worry, Overwatch is what's called a "respawn" game. After a player "dies" from taking too much damage, they must wait a few seconds and then they rejoin the game and try again to take the objective from the other team
+Holding down an objecitve area is where damaging your opponent comes in to play. When the other team tries to get on the objective at the same time as your team, you deal them damage to keep them away. Hopefully do enough that the opponent "dies". But don't worry, Overwatch is what's called a "respawn" game. After a player "dies" from taking too much damage, they must wait a few seconds and then they rejoin the game and try again to take the objective from the other team.
 
-##### Data
+#### Data
 
 We scraped a snapshot of PS4 players' SR (it changes from game to game) whose profiles were public on overwatchtracker.com. We then scraped players' career statistics from the games that they've played from the open source API ovrstat.com which returns convenient JSON formatted data.
 
 Currently we have over two thousand player skill ratings and over two thousand predictor variables. However, our research question will allow us to tailor our question to a small subset of the predictors, around 60 or so.
 
-##### Research Question
+#### Research Question
 
 Overall we're interested in the question: if a player wants to improve their SR, what should they focus on? Should they try to eliminate more opponents? Heal their teammates? Or, play a certain character? Answers like these will be provided by a predictive model of SR using career player statistics as predictors. The answers we find will allow any player to most efficiently improve their SR and begin climbing their way to Grandmaster!
 
 The answers we find could be used by amateurs and pro Overwatch gamers alike. We think of our analysis as the start of something like ["Moneyball"](https://en.wikipedia.org/wiki/Moneyball) for Overwatch.
 
-### Methods
+## Methods
 ```{r, echo=FALSE, message=FALSE}
 library(tidyverse)
 
@@ -112,11 +110,13 @@ curve(dnorm(x, mean = mean_sr, sd = sd_sr),
 
 Above is a normalized (to sum to 1) histogram of the reponse we want to model `skill_rating`. It appears that `skill_rating` (blue bars) looks a lot like a normal distribution (the orange line). This is a good thing, as this makes it easier to adhere to the assumptions of linear regression model we will use to explain the variation in player skill.
 
-##### Most played heroes
+#### Most played heroes
 
-At the time of the analysis, there are 30 heroes in Overwatch to choose from. Each hero has a unique play style. There are three types of heroes which determine the play style: Tank, Damage, or Support. Tank heroes can take a lot of damage and typically protect their teammates while trying to remain on the objective area. Damage heroes have the ability to do the most damage to the opposition. They have lower health than tank heroes, meaning they can "die" more easily. Lastly, there are support heroes. These heroes typically have the least health and do the least amount of damage to opponents. Instead of holding down an objective or damaging opponents, Support heroes main job to restore the health of their teammates, which is their primary special role on the team. That being said, all heroes can do damage and a really good Support player can beat a hard-to-kill tank in the game. You can read more about the heroes [here](https://en.wikipedia.org/wiki/Characters_of_Overwatch#Characters).
+At the time of the analysis, there are 30 heroes in Overwatch to choose from. Each hero has a unique play style. There are three types of heroes which determine the play style: **Tank**, **Damage**, or **Support**. **Tank** heroes can take a lot of damage and typically protect their teammates while trying to remain on the objective area. **Damage** heroes have the ability to do the most damage to the opposition. They have lower health than Tank heroes, meaning they can "die" more easily. 
 
-First, let's see which heroes are the most popular to play, and which type of hero they are.
+Lastly, there are **Support** heroes. These heroes typically have the least health and do the least amount of damage to opponents. Instead of holding down an objective or damaging opponents, Support heroes main job to restore the health of their teammates, which is their primary special role on the team. That being said, all heroes can do damage and a really good Support player can beat a hard-to-kill tank in the game. You can read more about the heroes [here](https://en.wikipedia.org/wiki/Characters_of_Overwatch#Characters).
+
+First, let's see which heroes are the most popular to play, and which type of hero they are:
 
 ```{r, echo=FALSE, cache=TRUE}
 # - bar chart of top players - brian
@@ -133,9 +133,9 @@ df %>%
   scale_fill_manual(values = c("#999999", "#E69F00", "#56B4E9"))
 ```
 
-Reinhardt, a Tank, and Moira, a Support hero, are by far the two most popular choices in competitive Overwatch games on Playstation. Overall, Damage heroes are less often a player's most played character. That's because in competitive matches, strategy and special abilities like healing teammates are more important just damaging the opponents. For example, the most popular hero Reinhardt has the largest shield in the game which all of his other teammates can stand behind and be protected from oppoisition damage. This is really useful when trying to remain on the objective space and keeping the other team out.
+Reinhardt, a Tank, and Moira, a Support hero, are by far the two most popular choices in competitive Overwatch games on Playstation. Overall, Damage heroes are less often a player's most-played character according the career stats data above. One reason for this is that, in competitive matches, strategy and special abilities like healing teammates are more important simply damaging your opponents. For example, the most popular hero Reinhardt has the largest shield in the game which all of his other teammates can stand behind and be protected from opposition damage. This is really useful when trying to remain on the objective area and keeping the other team out.
 
-Here we see that the `tank` and `support` type heroes are more popular than the `damage` heroes. Reinhardt was the most popular tank during the open beta and it appears his popularity remains strong. `Ana` is considered one of the most difficult heroes to play and master. The game developers may be interested to dig deeper to find out why `Pharah` is the least popular.
+Here we see that the `Tank` and `Support` type heroes are more popular than the `Damage` heroes. Reinhardt was the most popular tank during the open beta and it appears his popularity remains strong. `Ana` is considered one of the most difficult heroes to play and master. The game developers may be interested to dig deeper to find out why `Pharah` is the least popular. Perhaps it's because she's an easy target for skilled players to hit, has only an average amount of health and cannot heal herself.
 
 ```{r, echo=FALSE}
 # borrowed from week 8 HW
@@ -166,7 +166,7 @@ diagnostics <- function(model,
 }
 ```
 
-##### Full additive model
+#### Full additive model
 
 We'll start to understand what predicts `skill_rating` by using all available predictors, including the most popular hero got a given player shown in the chart above.
 
@@ -189,7 +189,7 @@ Our full additive model fails both the Shapiro-Wilk and Bruesch-Pagan test. We r
 
 Also, we reject the null of homoscedasticity, which means that the constant variance assumption is violated. 
 
-##### Full additive model problems
+#### Full additive model problems
 
 There are two major problems in the full additive model: heteroskedasticity and non-normal residuals. We can try to find the correct model and apply transformations to the predictors. Or, what we'll do instead is think more carefully about the predictors and hand-pick a smaller model to start with based on exploratory data analysis and our knowledge of Overwatch.
 
@@ -227,7 +227,7 @@ The two most negatively correlated variables with `skill_rating` are: ``r sort(l
 
 Again, these two variables are conceptually very similar so we only need to keep one in the next model: `average.objectiveKillsAvgPer10Min`. `average.objectiveKillsAvgPer10Min` is more actionable than `average.objectiveTimeAvgPer10Min` since it's more specific about what to do when a player is on the objective area, get "kills".
 
-##### Number of games played as a predictor
+#### Number of games played as a predictor
 
 A player may need to get better to improve their "average" statistics laid out in the correlated variables above. But one thing *any* player can always do is play more. So we also want to consider the number of games played as a predictor of `skill_rating` as it's both actionable and an obvious variable to control for, i.e. are the most skilled just those who have played the most?
 
@@ -306,7 +306,7 @@ anova(fit_null, fit_full)
 Again, we reject the null hypothesis and confirm that the addition of the interaction predictor `top_hero:average.allDamageDoneAvgPer10Min` to the model is significant (the model chosen by backwards AIC).
 
 
-### Results
+## Results
 
 We use 2 ANOVA tests to confirm that our final model is the best.
 
@@ -342,7 +342,7 @@ summary(fit_full)$adj.r.squared
 
 Again, we reject the null hypothesis and confirm that the addition of the interaction predictor `top_hero:average.allDamageDoneAvgPer10Min` to the model is significant (the model chosen by backwards AIC).
 
-The model chosen by AIC has a higher $R^2$ than the model chosen using BIC. Therefore, our best model is the one chosen by AIC. We'll now check the assumptions of the model to make sure we can trust the hypothesis tests since we're interested in find out what variables best explain `skill_rating` and how they affect `skill_rating`.
+The model chosen by AIC has a higher $R^2$ than the model chosen using BIC. Therefore, our best model is the one chosen by AIC. We'll now check the assumptions of the model to make sure we can trust the hypothesis tests since we're interested in finding out what variables best explain `skill_rating` and how they affect `skill_rating`.
 
 ```{r}
 fit_final = lm(formula = skill_rating ~ top_hero + best.meleeFinalBlowsMostInGame + 
@@ -365,7 +365,7 @@ At the level $\alpha = 0.05$, we fail to reject the $H_0$ of the Shapiro-Wilk te
 
 Similarly, at the level $\alpha = 0.05$, we find evidence that the errors are homoskedastic, failing to reject $H_0$ for the Breusch-Pagan test, with a $p-value$ of `r bp_final$p.value`.
 
-### Discussion
+## Discussion
 
 So, what should a player who wants to improve their skill rating focus on? We look to our best model to help us.
 
@@ -403,11 +403,11 @@ We can see this by comparing our coefficients:
 - `top_heroana:average.allDamageDoneAvgPer10Min` + `allDamageDoneAvgPer10Min` = ``r coef(back_aic)["top_heroana:average.allDamageDoneAvgPer10Min"] + coef(back_aic)["average.allDamageDoneAvgPer10Min"]``
 - `average.allDamageDoneAvgPer10Min` = ``r coef(back_aic)["average.allDamageDoneAvgPer10Min"]``
 
-Because the `top_hero` predictor is releveled with `Reinhardt` (a tank) as the base, we can interpret the above values as such: when playing as a tank your skill rating benefits more by doing a lot of damage than if you were doing a lot of damage as a support character (Ana & Mercy). 
+Because the `top_hero` predictor is releveled with `Reinhardt` (a tank) as the base, we can interpret the above values as such: when playing Reinhardt, the most popular hero, your skill rating benefits more by doing a lot of damage than if you were doing a lot of damage as a Support character (Ana & Mercy). 
 
 Now, looking at `games_played`: ``r coef(back_aic)["games_played"]``, we can see that your skill rating also increases with the number of games you play. Rescaling the coefficient back to it's orignal units $e^\beta$ = ``r exp(coef(back_aic)["games_played"])`` we see that your average skill rating goes up by ~`r exp(coef(back_aic)["games_played"])` points per game played. This makes sense because it is fair to assume that you improve as a player the more you play. Practice always helps!
 
-##### Summary of findings
+#### Summary of findings
 
 Our best model shows that if you want to climb the Overwatch skill leaderboard on Playstation 4, you should:
 
